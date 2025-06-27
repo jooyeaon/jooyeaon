@@ -13,8 +13,6 @@ Here are some ideas to get you started:
 - 📫 How to reach me: ...
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
--->
-
 
 ## ✅ 자주 쓰는 마크다운 문법 요약
 
@@ -49,18 +47,30 @@ Here are some ideas to get you started:
 3. 파일명에 `README.md` 입력
 4. 위 예시 내용을 붙여넣기
 5. 하단 `Commit new file` 클릭 → 저장 완료!
+-->
+
+
+## 🚀 1. 개인 공부용 + 포트폴리오 정리
+
+> 개인적인 포트폴리오 정리   
 
 ---
 
-### ✅ 방법 2. 로컬에서 작성 후 업로드
+## 🧪 2. **기술 스택**
 
-1. 로컬 PC에서 텍스트 편집기 (VSCode 등) 열기
-2. 새 파일 만들고 이름을 `README.md`로 저장
-3. 예시 내용 작성
-4. Git으로 커밋하고 푸시
+| 구분 | 기술 |
+|------|------|
+| 백엔드 | Spring Boot, JPA, MySQL |
+| 프론트 | Vue.js, Axios |
+| 인프라 | Docker, Nginx |
+| 배포 | GitHub Actions + AWS EC2 |
 
-```bash
-git add README.md
-git commit -m "Add README"
-git push origin main
+---
+## 🗂️ Projects
+
+| 프로젝트 | 설명 |
+|----------|------|
+| `HTTP-connection-issue` | 안드로이드 해외VPN 접속 시 느림 현상 |
+| `k8s-study` | 쿠버네티스 실습용 레포 |
+| `v3-integration-note` | 보안 연동 정리용 샘플 |
 
