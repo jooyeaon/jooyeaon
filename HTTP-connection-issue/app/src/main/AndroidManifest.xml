@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.covision.moapp">
+
+    <!-- !! 파일 수정 시 nowidget폴더 내 manifest도 수정할 것 !! -->
+
+    <!-- 지문 -->
+    <uses-feature
+        android:name="android.hardware.fingerprint"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+
+    <!-- 사진/첨부 -->
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+
+    <!-- MO 인터넷 사용 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- 기기번호 조회 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" android:maxSdkVersion="29"/>
+    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
+
+    <!-- 수신정보 표시 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <!-- 수신정보 표시(사용자이미지용 plugin에서 사용) -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- 안드로이드 9.0 대응 (후스콜/배터리사용량최적화) -->
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
+    <!-- 생체인증 알림 화면on -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- 위치 조회 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /><!-- 위치(위도/경도) 조회 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /><!-- 위도/경도 값으로 실제 주소 조회 -->
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" /> <!-- 위치권한 체크 시 항상 허용 활성화 -->
+
+    <!-- 음성 인식 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!-- 푸시 권한(android 13) -->
+    <uses-permission
+        android:name="android.permission.POST_NOTIFICATIONS"
+        android:minSdkVersion="33" />
+
+    <!-- 연락처 동기화 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+
+    <!-- 근태관리 비콘 연동 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <!-- 기기 관리자 삼성추가 -->
+    <uses-permission
+        android:name="com.samsung.android.knox.permission.KNOX_ENTERPRISE_DEVICE_ADMIN"
+        android:protectionLevel="signature" />
+
+    <application
+        android:name=".BaseApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/icon_app"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.1" />
+
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize|screenLayout|smallestScreenSize"
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan|stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="start"
+                    android:scheme="smartsforjmobile" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize|screenLayout|smallestScreenSize"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".TabActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+            android:exported="true"
+            android:launchMode="singleTop" />
+
+        <!-- 환경설정-앱잠금 -->
+        <activity
+            android:name=".ConfigUnlockActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize|screenLayout|smallestScreenSize" />
+        <activity
+            android:name=".ConfigUnlockPatternActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize|screenLayout|smallestScreenSize" />
+        <activity
+            android:name=".ConfigUnlockPinCodeActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize|screenLayout|smallestScreenSize" />
+
+        <!-- 환경설정-생체인증 -->
+        <activity
+            android:name=".ConfigFidoActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize|screenLayout|smallestScreenSize" />
+        <activity
+            android:name=".ConfigFidoPatternActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize|screenLayout|smallestScreenSize" />
+        <activity
+            android:name=".ConfigFidoPinCodeActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize|screenLayout|smallestScreenSize" />
+
+        <!-- 환경설정-앱잠금/생체인증 공통-패턴/비밀번호 설정 화면 -->
+        <activity android:name=".PatternSetActivity" />
+        <activity android:name=".PinCodeSetActivity" />
+
+        <!-- 환경설정-앱잠금-패턴/비밀번호 인증화면 -->
+        <activity android:name=".UnlockPatternActivity" />
+        <activity android:name=".UnlockPinCodeActivity" />
+
+        <!-- 환경설정-생체인증 > 인증받는 화면 & 패턴/비밀번호 인증화면 -->
+        <activity
+            android:name=".FidoAuthActivity"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.covision.moapp.fido" />
+        <activity
+            android:name=".FidoAuthMPActivity"
+            android:screenOrientation="portrait"
+            android:taskAffinity="com.covision.moapp.fido" />
+        <activity
+            android:name=".FidoPatternActivity"
+            android:taskAffinity="com.covision.moapp.fido" />
+        <activity
+            android:name=".FidoPinCodeActivity"
+            android:taskAffinity="com.covision.moapp.fido" />
+
+        <!-- 환경설정-저장공간 -->
+        <activity
+            android:name=".ConfigStorageActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize|screenLayout|smallestScreenSize" />
+
+        <!-- 환경설정-수신전화 알림 -->
+        <activity
+            android:name=".ConfigIncomingCallActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize|screenLayout|smallestScreenSize" />
+        <activity
+            android:name="com.covision.incomingcall.IncomingCallConfSetting"
+            android:screenOrientation="portrait" />
+        <service
+            android:name="com.covision.incomingcall.NewIncomingCallService"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.BIND_SCREENING_SERVICE">
+            <intent-filter>
+                <action android:name="android.telecom.CallScreeningService" />
+            </intent-filter>
+        </service>
+<!--        <receiver
+            android:name="com.covision.incomingcall.IncomingCallReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.covision.incomingcall.IncomingCallPopupService" />-->
+
+        <!-- QrCode Scanner -->
+        <activity
+            android:name="com.covision.moapp.ScannerActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- FCM PUSH메시지 관련-->
+        <service
+            android:name="com.covision.FCM.FCMService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.covision.FCM.FCMIDService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".PushHistoryActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize|screenLayout|smallestScreenSize" />
+        <activity
+            android:name=".DialogActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize|screenLayout|smallestScreenSize"
+            android:theme="@style/Theme.AppCompat.Translucent" />
+
+        <!-- 현재 위치정보 -->
+        <service
+            android:name="com.covision.location.LocationAndroidApi"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.covision.location.AndroidApi" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.covision.location.LocationGoogleApi"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.covision.location.GoogleApi" />
+            </intent-filter>
+        </service>
+        <activity android:name="com.covision.location.LocationPermissionActivity"
+            android:enabled="true"
+            android:exported="true"/>
+
+        <!-- 사이냅 문서변환 서버 호출 -->
+        <activity
+            android:name=".DocConverterForSynap2016"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize|screenLayout|smallestScreenSize" />
+
+        <!-- M365 -->
+        <activity
+            android:name="com.microsoft.identity.client.BrowserTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="com.covision.moapp"
+                    android:path="/rdpdE73wTF4v6bdSp3QD0+G9pBo="
+                    android:scheme="msauth" />
+            </intent-filter>
+        </activity>
+
+        <!-- MDM 추가-->
+
+        <!-- 기기관리자 -->
+        <activity
+            android:name=".MDMActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize|screenLayout|smallestScreenSize" />
+        <activity android:name=".MDMPermissionCheckActivity" />
+
+        <receiver
+            android:name=".MDMActivity$MDMDeviceAdminReceiver"
+            android:exported="false"
+            android:label="@string/device_admin_title"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/device_policies" />
+
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_DISABLE_REQUESTED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_DISABLED" />
+            </intent-filter>
+        </receiver>
+        <activity
+            android:name=".MDMResetActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize|screenLayout|smallestScreenSize" />
+
+        <!-- 삼성 라이선스 활성화 리시버 -->
+        <receiver
+            android:name=".MDMActivity$MDMSamsungLicenseReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.samsung.android.knox.intent.action.LICENSE_STATUS" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.samsung.android.knox.intent.action.KNOX_LICENSE_STATUS" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.samsung.android.knox.IntentConverterReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="edm.intent.application.action.prevent.start" />
+                <action android:name="edm.intent.application.action.prevent.stop" />
+                <action android:name="edm.intent.action.ldap.createacct.result" />
+                <action android:name="edm.intent.action.device.inside" />
+                <action android:name="edm.intent.action.device.outside" />
+                <action android:name="edm.intent.action.device.location.unavailable" />
+                <action android:name="com.samsung.edm.intent.action.CERTIFICATE_REMOVED" />
+                <action android:name="edm.intent.certificate.action.certificate.failure" />
+                <action android:name="com.samsung.edm.intent.action.APPLICATION_FOCUS_CHANGE" />
+                <action android:name="edm.intent.action.EMAIL_ACCOUNT_ADD_RESULT" />
+                <action android:name="edm.intent.action.EMAIL_ACCOUNT_DELETE_RESULT" />
+                <action android:name="com.sec.enterprise.intent.action.BLOCKED_DOMAIN" />
+                <action android:name="com.sec.enterprise.intent.action.UPDATE_FOTA_VERSION_RESULT" />
+                <action android:name="com.samsung.edm.intent.action.EXCHANGE_CBA_INSTALL_STATUS" />
+                <action android:name="android.intent.action.sec.CBA_INSTALL_STATUS" />
+                <action android:name="edm.intent.action.EXCHANGE_ACCOUNT_ADD_RESULT" />
+                <action android:name="edm.intent.action.EXCHANGE_ACCOUNT_DELETE_RESULT" />
+                <action android:name="com.samsung.edm.intent.action.ENFORCE_SMIME_ALIAS_RESULT" />
+                <action android:name="edm.intent.action.knox_license.status" />
+                <action android:name="edm.intent.action.license.status" />
+                <action android:name="com.samsung.edm.intent.event.NTP_SERVER_UNREACHABLE" />
+                <action android:name="edm.intent.action.enable.kiosk.mode.result" />
+                <action android:name="edm.intent.action.disable.kiosk.mode.result" />
+                <action android:name="edm.intent.action.unexpected.kiosk.behavior" />
+                <action android:name="com.samsung.edm.intent.action.SIM_CARD_CHANGED" />
+                <action android:name="android.intent.action.sec.SIM_CARD_CHANGED" />
+                <action android:name="com.samsung.action.knox.certenroll.CEP_CERT_ENROLL_STATUS" />
+                <action android:name="com.samsung.action.knox.certenroll.CEP_SERVICE_DISCONNECTED" />
+                <action android:name="com.sec.enterprise.knox.intent.action.KNOX_ATTESTATION_RESULT" />
+                <action android:name="com.sec.action.NO_USER_ACTIVITY" />
+                <action android:name="com.sec.action.USER_ACTIVITY" />
+                <action android:name="com.samsung.android.mdm.VPN_BIND_RESULT" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 위젯 각각 추가 : 화이트/블랙-->
+        <receiver
+            android:name=".WidgetProvider_white"
+            android:exported="true"
+            android:label="@string/appwidget_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.appwidget.action.APPWIDGET_ENABLED" />
+                <action android:name="android.appwidget.action.APPWIDGET_DISABLED" />
+
+                <action android:name="com.covision.moapp.REFRESH_WHITE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/app_widget_white_info" />
+        </receiver>
+
+        <receiver
+            android:name=".WidgetProvider_black"
+            android:enabled="true"
+            android:exported="true"
+            android:label="@string/appwidget_label_black">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.appwidget.action.APPWIDGET_ENABLED" />
+                <action android:name="android.appwidget.action.APPWIDGET_DISABLED" />
+
+                <action android:name="com.covision.moapp.REFRESH_BLACK" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/app_widget_black_info" />
+        </receiver>
+
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <receiver
+            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+            android:enabled="true"
+            android:exported="true"
+            tools:replace="android:exported">
+            <intent-filter>
+                <action android:name="com.google.android.gms.measurement.UPLOAD" />
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
+            android:enabled="true"
+            android:exported="true"
+            tools:replace="android:exported">
+            <intent-filter>
+                <action android:name="com.google.android.gms.measurement.UPLOAD" />
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+    </application>
+    <!--
+    <queries>
+        <package android:name="com.covision.moapp" />
+        <package android:name="com.covision.update" />
+        <package android:name="com.google.android.packageinstaller" />
+        <package android:name="com.covision.update.INSTAllAPK" />
+        <intent>
+            <action android:name="android.intent.extra.INTENT" />
+        </intent>
+    </queries>
+    -->
+</manifest>
