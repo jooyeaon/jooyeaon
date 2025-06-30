@@ -60,10 +60,11 @@ Here are some ideas to get you started:
 
 | 구분 | 기술 |
 |------|------|
-| 백엔드 | Spring Boot, JPA, MySQL |
-| 프론트 | Vue.js, Axios |
-| 인프라 | Docker, Nginx |
-| 배포 | GitHub Actions + AWS EC2 |
+| 백엔드 | JAVA, Spring boot, Swift, JPA  |
+| DB | MySql, MSSQL, Oracle, postgresql,  |
+| 프론트 | javascript, bootstrap5, HTML5 |
+| 인프라 | Window Tomcat9, Linux, Kubernetes(K8s) |
+| 배포 | SVN |
 
 ---
 ## 🗂️ Projects
@@ -71,6 +72,6 @@ Here are some ideas to get you started:
 | 프로젝트 | 설명 |
 |----------|------|
 | `HTTP-connection-issue` | 안드로이드 해외VPN 접속 시 느림 현상 |
-| `k8s-study` | 쿠버네티스 실습용 레포 |
-| `v3-integration-note` | 보안 연동 정리용 샘플 |
+| `OneTime_ImageURL` | ImageURL 가져오기 |
+| `Screen_LISS_test` | 캡쳐방지 솔루션 연동 |
 
