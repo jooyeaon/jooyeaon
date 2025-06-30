@@ -1,0 +1,24 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    compileSdkVersion 33
+    defaultConfig {
+        applicationId "com.covision.moapp"
+        minSdkVersion 24
+        targetSdkVersion 33
+        versionCode 1
+        versionName "2.0.6"
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+    }
+
+}
+
+dependencies {
+
+    // 후스콜 이미지
+    implementation 'com.eatthepath:java-otp:0.4.0'
+}
+
+
