@@ -74,4 +74,5 @@ Here are some ideas to get you started:
 | `HTTP-connection-issue` | 안드로이드 해외VPN 접속 시 느림 현상 |
 | `OneTime_ImageURL` | ImageURL 가져오기 |
 | `Screen_LISS_test` | 캡쳐방지 솔루션 연동 |
+| `app_version_check` | 특정 버전 이하는 앱 실행 불가 |
 
