@@ -75,4 +75,5 @@ Here are some ideas to get you started:
 | `OneTime_ImageURL` | ImageURL 가져오기 |
 | `Screen_LISS_test` | 캡쳐방지 솔루션 연동 |
 | `app_version_check` | 특정 버전 이하는 앱 실행 불가 |
+| `fido_test_simple` | Android Keystore 기반의 생체인증 연동 데이트 암호화 솔루션 |
 
