@@ -77,3 +77,15 @@ Here are some ideas to get you started:
 | `app_version_check` | 특정 버전 이하는 앱 실행 불가 |
 | `fido_test_simple` | Android Keystore 기반의 생체인증 연동 데이트 암호화 솔루션 |
 
+---
+## 🗂️ 써드파티 연동 (프로젝트로 코드 빼기 어려운 것들 정리)
+
+| 프로젝트 | 설명 | 적용 코드 |
+|----------|------|------|
+| `V3` | 백신 연동 | 안드로이드 |
+| `앱슈트` | 난독화 연동 | 안드로이드, IOS |
+| `Droid-X` | 백신 연동 | 안드로이드 |
+| `ORA-X` | 백신 연동 | IOS |
+| `TMW` | 워터마크 연동 | 안드로이드, IOS |
+| `OneGuard` | MDM 연동 | 안드로이드, IOS |
+
