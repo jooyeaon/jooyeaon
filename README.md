@@ -92,4 +92,5 @@ Here are some ideas to get you started:
 | `ORA-X` | 백신 연동 | IOS |
 | `TMW` | 워터마크 연동 | 안드로이드, IOS |
 | `OneGuard` | MDM 연동 | 안드로이드, IOS |
-
+| `LISS` | 캡쳐방지 연동 | 안드로이드, IOS |
+| `SSL VPN` | VPN 연동 | 안드로이드, IOS |
