@@ -1,14 +1,13 @@
 class MOInputViewController: UIViewController {
 
     let arrProtocols:[String] = ["https://", "http://"];
-    let nameProtocols:[String] = ["조선내화", "대한소결금속", "삼한", "화인태크", "시알이노테크", "선화이엔지", "선우이엔지", "화인로", "IPCR", "CCR"];
-    let urlProtocols:[String] = ["mcrworks.crholdings.co.kr", "mksmworks.crholdings.co.kr", "mshworks.crholdings.co.kr", "mftcworks.crholdings.co.kr", "mcrinnoworks.crholdings.co.kr", "msunhwaworks.crholdings.co.kr", "msunwooworks.crholdings.co.kr", "mfineroworks.crholdings.co.kr", "mipcrworks.crholdings.co.kr", "mccrworks.crholdings.co.kr"];
-    
+    let nameProtocols:[String] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+    let urlProtocols:[String] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
 	
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-		self.urlAddrText.text = self.arrProtocols[0] + self.urlProtocols[0] + "/mobileapp"
+		self.urlAddrText.text = self.arrProtocols[0] + self.urlProtocols[0] + "/URL"
     }
     
     override func viewDidLoad() {
@@ -36,7 +35,7 @@ class MOInputViewController: UIViewController {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.urlAddrText.text = self.arrProtocols[0] + self.urlProtocols[row] + "/mobileapp"
+        self.urlAddrText.text = self.arrProtocols[0] + self.urlProtocols[row] + "/URL"
     }
 	
 }
