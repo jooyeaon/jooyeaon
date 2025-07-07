@@ -1,0 +1,344 @@
+<resources>
+
+    <!-- 앱 기본 설정 -->
+    <string name="app_name" translatable="false">CR WORKS</string><!-- !! 앱이름 변경 시 아래 string파일에 있는 '그룹웨어'도 변경할 것 !! -->
+    <string name="app_packagename" translatable="false">com.crholdings.moapp</string>
+    <string name="app_version" translatable="false">Android</string>
+    <string name="app_fcmchannel" translatable="false">MobileOffice</string>
+    <string name="app_mainactivity" translatable="false">com.crholdings.moapp.MainActivity</string>
+    <string name="app_wipe_controller" translatable="false">com.crholdings.moapp.MainActivity</string>
+    <string name="app_lock_passtime" translatable="false">600</string><!--앱 잠금 유예 시간 설정(초 단위) -->
+    <string name="app_background_time" translatable="false">1800</string> <!-- 장시간 미사용 관련 (초 단위) -->
+    <string name="app_copyright" translatable="false">Copyright @ covision Corp All Right Reserved</string>
+
+    <!-- 1. MP/CP 구분 옵션 -->
+    <string name="app_platform" translatable="false">CP</string>
+
+    <!-- 2. [MainActivity] URL 입력 옵션 처리, 도메인 입력(변경) 사용 여부 Y/N -->
+    <string name="url_editable_domain" translatable="false">Y</string>
+    <!-- N : 고정 도메인 설정 필요 -->
+    <string name="url_gw" translatable="false">https://mcrworks.crholdings.co.kr</string>
+    <string name="url_push" translatable="false">https://mcrworks.crholdings.co.kr/mobileapp</string>
+    <!-- Y : 고정 도메인 설정 필요 x -->
+    <string name="url_getgwurl" translatable="false">/app/getgwurl</string>
+
+    <!-- 앱-push서버간 request -->
+    <string name="url_checkstatus" translatable="false">/app/checkstatus</string>
+    <string name="url_checkstatuswithtoken" translatable="false">/app/checkstatuswithtoken</string>
+    <string name="url_checkstatuswithtoken_cp" translatable="false">/app/checkstatuswithtokenCP</string>
+    <string name="url_login" translatable="false">/app/deviceregist</string>
+    <string name="url_login_cp" translatable="false">/app/deviceregistCP</string>
+    <string name="url_login_checktype" translatable="false">/app/checkUserLoginType</string>
+    <string name="url_logout" translatable="false">/app/logout_forall</string>
+    <string name="url_pushidupdate" translatable="false">/app/pushid_forall</string>
+
+    <!--<string name="url_apk" translatable="false">/AppSetup/And/MobileOffice.apk</string>-->
+    <string name="url_apkdown" translatable="false">/appdown/androidapp</string>
+    <string name="url_apkname" translatable="false">MobileOffice.apk</string>
+
+    <!-- 앱-push서버간 request >> 로그-파일다운로드/파일 -->
+    <string name="url_log_filedownload" translatable="false">/app/device_fileDownload</string>
+    <string name="url_log_fileview" translatable="false">/app/device_fileView</string>
+    <string name="url_log_gwurl" translatable="false">/app/gwlog</string>
+    <!-- 앱-push서버간 request >> 수신전화알림 관련 -->
+    <string name="url_phonenumberlist" translatable="false">/app/phonenumber_list</string>
+    <string name="url_phonenumber_search" translatable="false">/app/phonenumber_search</string>
+    <!-- 앱-push서버간 request >> 위치확인/초기화 관련 -->
+    <string name="location_get" translatable="false">/app/device_location</string>
+    <string name="location_loss" translatable="false">/app/loss</string>
+    <string name="location_wipeexecute" translatable="false">/app/wipe</string>
+    <!-- 앱-push서버간 request >> 연락처 동기화 관련 -->
+    <string name="url_syncphonenumberinfo" translatable="false">/app/syncphonenumber_info</string>
+    <!-- 앱-push서버간 request >> 관리기기 응답 -->
+    <string name="url_chkmanage" translatable="false">/app/chkmanageresp</string>
+
+    <!-- [TabActivity] 하단탭URL -->
+    <string name="mp_url_gw_portal" translatable="false">/WebSite/MobileNew/Main.aspx</string><!-- 포탈 > Main -->
+    <string name="mp_url_gw_notice" translatable="false">/WebSite/MobileNew/ToDoList/List.aspx</string><!-- 알림 > -->
+    <string name="mp_url_gw_org" translatable="false">/WebSite/MobileNew/Organization/OrganizationMain.aspx?system=Organization</string><!-- MP 조직도 -->
+    <string name="cp_url_gw_main" translatable="false">/groupware/mobile/portal/home.do</string><!-- 첫번째꺼가 홈.do -->
+    <string name="cp_url_gw_portal" translatable="false">/groupware/mobile/portal/main.do</string>
+    <string name="cp_url_gw_notice" translatable="false">/groupware/mobile/portal/integrated.do</string>
+    <string name="cp_url_gw_org" translatable="false">/covicore/mobile/org/list.do</string>
+
+    <!-- [ConfigActivity] 환경설정 관련 -->
+    <string name="app_pushhistory_txt" translatable="false">push_history.txt</string>
+
+    <!-- [LoginActivity] 로고/백그라운드 이미지 URL -->
+    <string name="url_login_background_mp" translatable="false">/Images/Mobile/Common/login_img.jpg</string>
+    <string name="url_login_background_cp" translatable="false">/HtmlSite/smarts4j_n/mobile/resources/images/bg_login.jpg</string>
+    <string name="url_login_background_cp_url" translatable="false">/HtmlSite/smarts4j_n/mobile/resources/images/</string>
+
+    <!-- [IncommingCall] 수신전화알림 이미지 URL -->
+    <string name="incomingcall_placeholderimg_mp" translatable="false">/Images/Mobile/Common/logo_company.png</string>
+    <string name="incomingcall_placeholderimg_cp" translatable="false">/htmlsite/smarts4j_n/mobile/resources/images/logo_company.png</string>
+
+    <!-- 생체인증 -->
+    <string name="mp_url_fido" translatable="false">/WebSite/Base/Fido/?</string>
+    <string name="cp_url_fido" translatable="false">/covicore/control/fido.do</string>
+
+    <!-- 위젯 -->
+    <string name="mp_widget_webservice_namespace" translatable="false">http://tempuri.org/</string>
+    <string name="mp_widget_webservice_method" translatable="false">GetCountForWidget</string>
+    <string name="mp_widget_webservice_url" translatable="false">/WebSite/Base/Controls/ExternalWebService.asmx?WSDL</string>
+    <string name="mp_url_gw_mail" translatable="false">/WebSite/MobileNew/Mail/MailMain.aspx?system=Mail</string>
+    <string name="mp_url_gw_approval" translatable="false">/WebSite/MobileNew/Approval/ApprovalMain.aspx?system=Approval</string>
+    <string name="mp_url_gw_schedule" translatable="false">/WebSite/MobileNew/Schedule/ScheduleMonth.aspx?system=Schedule</string>
+    <string name="cp_url_gw_widget" translatable="false">/groupware/mobile/getQuickDataForMobile.do</string>
+    <string name="cp_url_gw_mail" translatable="false">/mail/mobile/mail/List.do</string>
+    <string name="cp_url_gw_approval" translatable="false">/approval/mobile/approval/list.do</string>
+    <string name="cp_url_gw_schedule" translatable="false">/groupware/mobile/schedule/month.do</string>
+    <string name="cp_url_gw_sfeed" translatable="false">/feed/mobile/feed/List.do</string>
+
+    <!-- 위젯 메뉴별 표출 관련 -->
+    <string name="widget_use_mail" translatable="false">Y</string>
+    <string name="widget_use_approval" translatable="false">Y</string>
+    <string name="widget_use_schedule" translatable="false">Y</string>
+    <string name="widget_use_noti" translatable="false">Y</string>
+    <string name="widget_use_sfeed" translatable="false">Y</string>
+
+    <!-- [MP] 전용 -->
+    <string name="mp_url_gw_mainall" translatable="false">/Main_Metro.aspx|/Main.aspx|/Main_List.aspx|/Main_Social.aspx</string>
+
+    <!-- 프로젝트 배포 시 예외처리를 위해 추가 (프로젝트별 배포 시 코드 맞춰서 배포할 것) -->
+    <!--       개발 - DEV -->
+    <!--        웰바이오텍 (구:와이비로드) - YBROAD -->
+    <!--            > 7/25 최신소스로 배포(후스콜 예외) -->
+    <!--        코비젼 - COVISION -->
+    <!--        보령그룹 - BORYUNG -->
+    <!-- !!이후에는 서버에서 키 받아옴!!-->
+    <string name="project_company" translatable="false">DEV</string>
+
+
+    <!-- ↓↓ 다국어값 ↓↓ -->
+
+    <!-- 공통 -->
+    <string name="common_on">사용 중</string>
+    <string name="common_off">사용 안함</string>
+
+    <string name="common_dialog_ok">확인</string>
+    <string name="common_dialog_cancel">취소</string>
+    <string name="common_dialog_neutral">이동</string>
+
+    <!-- 서버등록/로그인 관련 -->
+    <string name="regurl_title">CR WORKS 연결</string><!--모바일 URL 등록-->
+    <string name="regurl_hint">PUSH서버 URL을 입력하세요</string><!--모바일 URL을 입력하세요-->
+    <string name="regurl_btn">연결</string>
+    <string name="regurl_msg_needurl">URL을 입력해 주세요.</string>
+    <string name="regurl_msg_doretry">입력한 모바일URL 정보를 확인할 수 없습니다. 확인 후 다시 시도하시기 바랍니다.</string>
+
+    <string name="login_title">로그인</string>
+    <string name="login_id">ID</string>
+    <string name="login_id_hint">ID를 입력하세요</string>
+    <string name="login_pw">PW</string>
+    <string name="login_pw_hint">PW를 입력하세요</string>
+    <string name="login_msg_needidpw">ID 또는 PW를 입력해 주세요.</string>
+    <string name="login_btn">로그인</string>
+    <string name="login_btn_next">다음</string>
+    <string name="login_btn_prev">처음으로</string>
+    <string name="login_id_invalid">임직원 정보를 찾을 수 없습니다. 로그인 정보를 확인해주세요.</string>
+
+    <string name="login_msg_error_connectserver">서버와의 통신(기기상태 체크/정책) 중 오류가 발생했습니다. 관리자에게 문의하시기 바랍니다.</string>
+
+    <string name="login_status_candidated">승인 대기 중입니다. 관리자의 승인 후 재접속하십시오.</string>
+    <string name="login_status_disabled">비활성 기기입니다. 관리자에게 문의하십시오.</string>
+    <string name="login_status_invalid">사용자 계정 정보가 유효하지 않습니다. 다시 로그인 해주시기 바랍니다.</string>
+
+    <string name="login_regstatus_ok">신청이 완료 됐습니다.</string>
+    <string name="login_regstatus_invalid">사용자 계정 정보가 유효하지 않습니다. 다시 로그인 해주시기 바랍니다.</string>
+    <string name="login_regstatus_unregistered">로그인 정보를 찾을 수 없습니다. 다시 로그인 하시기 바랍니다.</string>
+    <string name="login_regstatus_candidated">신청이 완료 됐습니다. 관리자의 승인 후 재접속하십시오.</string>
+    <string name="login_regstatus_excess">로그인 허용 기기수를 초과했습니다. 관리자에게 문의하시기 바랍니다.</string>
+    <string name="login_regstatus_error">신청 도중 오류가 발생했습니다. 관리자에게 문의하시기 바랍니다.</string>
+
+    <string name="login_msg_confirm_update">앱 업데이트가 있습니다. 업데이트를 하시겠습니까?</string>
+    <string name="login_msg_error">앱 업데이트 중 오류가 발생했습니다. 다시 시도하시기 바랍니다.</string>
+
+
+
+    <!-- 환경설정 관련 -->
+    <string name="config">환경 설정</string>
+    <string name="config_lock">앱 잠금</string>
+    <string name="config_fido">생체인증 설정</string>
+    <string name="config_lang">언어 설정</string>
+    <string name="config_voice">음성인식 설정</string>
+    <string name="config_storage">저장공간 관리</string>
+    <string name="config_incomingcall">수신전화 알림 관리</string>
+    <string name="config_pushhistory">PUSH 수신목록 관리</string>
+    <string name="config_logout">기기등록 해제</string>
+    <string name="config_version">버전</string>
+
+    <string name="config_lock_title">앱 잠금 설정</string>
+    <string name="config_lock_msg_needconfig">앱 잠금을 설정하세요.</string>
+    <string name="config_lock_pincode">비밀번호</string>
+    <string name="config_lock_pincode_desc">비밀번호를 사용하여 앱 잠금을 해제할 수 있습니다.</string>
+    <string name="config_lock_pincode_change">비밀번호 변경</string>
+    <string name="config_lock_pincode_msg_needconfig">비밀번호를 설정 해주세요.</string>
+    <string name="config_lock_pattern">패턴</string>
+    <string name="config_lock_pattern_desc">패턴을 사용하여 앱 잠금을 해제할 수 있습니다.</string>
+    <string name="config_lock_pattern_change">패턴 변경</string>
+    <string name="config_lock_pattern_msg_needconfig">패턴을 설정 해주세요.</string>
+    <string name="config_lock_fingerprint">지문</string>
+    <string name="config_lock_fingerprint_desc">지문을 사용하여 앱 잠금을 해제할 수 있습니다.</string>
+    <string name="config_lock_bioAuth">생체인증</string>
+    <string name="config_lock_bioAuth_desc">생체인증을 사용하여 앱 잠금을 해제할 수 있습니다.</string>
+
+    <string name="msg_notmatchfingerprint">지문이 일치하지 않습니다. 다시 시도해주시기 바랍니다.</string>
+
+    <string name="config_fido_title">생체인증 설정</string>
+    <string name="config_fido_notuse">사용안함</string>
+    <string name="config_fido_nosupptype">사용 가능한 인증 방식이 없습니다.</string>
+    <string name="config_fido_fingerprint">지문</string>
+    <string name="config_fido_fingerprint_desc">지문을 사용하여 인증을 할 수 있습니다.</string>
+    <string name="config_fido_iris">홍채</string>
+    <string name="config_fido_iris_desc">홍채를 사용하여 인증을 할 수 있습니다.</string>
+    <string name="config_fido_face">얼굴인식</string>
+    <string name="config_fido_face_desc">얼굴인식을 사용하여 인증을 할 수 있습니다.</string>
+    <string name="config_fido_pincode">비밀번호</string>
+    <string name="config_fido_pincode_desc">비밀번호를 사용하여 인증을 할 수 있습니다.</string>
+    <string name="config_fido_pincode_change">비밀번호 변경</string>
+    <string name="config_fido_pattern">패턴</string>
+    <string name="config_fido_pattern_desc">패턴을 사용하여 인증을 할 수 있습니다.</string>
+    <string name="config_fido_pattern_change">패턴 변경</string>
+
+    <string name="config_lang_restart">언어 설정이 변경되어 앱을 재실행합니다.</string>
+
+    <string name="config_storage_totaluseage">사용 중인 저장공간</string>
+    <string name="config_storage_totaluseagecalc">계산중...</string>
+    <string name="config_storage_delcache">캐시 데이터 삭제</string>
+    <string name="config_storage_delcache_desc">웹뷰에 저장된 캐시와 쿠키를 삭제합니다.</string>
+    <string name="config_storage_delcache_msg_confirm">캐시 데이터와 쿠키를 모두 삭제 하시겠습니까?\n(삭제 후 화면을 다시 조회합니다.)</string>
+    <string name="config_storage_delcache_nocookie">캐시 데이터 삭제 (쿠키 제외)</string>
+    <string name="config_storage_delcache_nocookie_desc">웹뷰에 저장된 캐시 데이터를 삭제합니다.</string>
+    <string name="config_storage_delcache_nocookie_msg_confirm">캐시 데이터(쿠키 제외)를 삭제 하시겠습니까?\n(삭제 후 화면을 다시 조회합니다.)</string>
+    <string name="config_storage_delfile">다운로드 파일 삭제</string>
+    <string name="config_storage_delfile_desc">다운로드한 첨부파일 등 앱 폴더에 저장된 모든 파일을 삭제합니다.</string>
+    <string name="config_storage_delfile_msg_confirm">다운로드한 파일을 삭제 하시겠습니까?</string>
+
+    <string name="config_incomingcall_syncdatetime">다운로드 일시</string>
+    <string name="config_incomingcall_sync">전화번호 정보 다운로드</string>
+    <string name="config_incomingcall_sync_desc">임직원 전화번호 정보를 다운로드 합니다.</string>
+    <string name="config_incomingcall_sync_msg_confirm">임직원 전화번호 정보를 다운로드 하시겠습니까?</string>
+    <string name="config_incomingcall_delsyncdata">전화번호 정보 삭제</string>
+    <string name="config_incomingcall_delsyncdata_desc">임직원 전화번호 정보 데이터를 삭제 합니다.</string>
+    <string name="config_incomingcall_delsyncdata_msg_confirm">저장된 임직원 전화번호 정보 데이터를 삭제 하시겠습니까?</string>
+    <string name="config_incomingcall_noti">수신전화 알림</string>
+    <string name="config_incomingcall_noti_desc">CR WORKS 사용자에게 전화가 오면 알림팝업을 표시합니다.</string>
+
+    <string name="config_voice_noti">음성인식 기능 사용여부 설정\n변경사항은 새로고침 이후 적용됩니다.</string>
+
+    <string name="config_push_link">바로가기</string>
+    <string name="config_push_nodata">조회할 데이터가 없습니다.</string>
+    <string name="config_push_delall">전체삭제</string>
+    <string name="config_push_deleteall">PUSH 수신 목록을 전체 삭제합니다. 진행하시겠습니까?</string>
+
+    <string name="config_logout_msg_confirm">기기등록을 해제하시겠습니까? 해제 시 기기에 저장된 모든 설정 및 서버에 등록된 기기 정보가 삭제되어 CR WORKS 접속 및 PUSH 메시지 수신이 불가합니다.</string>
+    <string name="config_logout_msg_mdm">주 기기 또는 관리기기를 해제할 수 없습니다. 관리자에게 문의하시기 바랍니다.</string>
+    <string name="config_logout_msg_error">기기등록 해제 중 오류가 발생했습니다. 다시 시도하시기 바랍니다.(%s)</string>
+
+    <!-- fido 인증 관련 -->
+    <string name="auth_title">생체인증</string>
+    <string name="auth_desc">생체인증</string>
+
+    <string name="auth_fingerprint_desc">지문으로 인증받기</string>
+    <string name="auth_fingerprint_hint">Touch sensor</string>
+    <string name="auth_fingerprint_success">Fingerprint recognized</string>
+    <string name="auth_fingerprint_recognized">Fingerprint not recognized. Try again</string>
+    <string name="auth_iris_desc">홍채인식으로 인증받기</string>
+    <string name="auth_face_desc">얼굴인식으로 인증받기</string>
+    <string name="auth_pincode_desc">비밀번호로 인증받기</string>
+    <string name="auth_pattern_desc">패턴으로 인증받기</string>
+    <string name="auth_na_desc">설정된\n인증방식이 없습니다.</string>
+    <string name="auth_na_re"><u>다시 요청하시기 바랍니다.</u></string>
+    <string name="auth_na_compsetting">생체인증 설정이\n완료 되었습니다.</string>
+    <string name="auth_succ">인증에\n<b>성공</b>했습니다</string>
+    <string name="auth_fail">인증에\n<b>실패</b>했습니다</string>
+
+    <!-- 후스콜팝업 관련 -->
+    <string name="popup_permission_msg_noti">전화번호 알림을 위해 &#8217;다른 앱 위에 그리기&#8217; 설정이 필요합니다.</string>
+    <string name="popup_permission_title">권한 설정 안내</string>
+    <string name="popup_permission_btn">설정하기</string>
+    <string name="popup_msg_error">수신전화 알림 팝업 표시 중 오류가 발생했습니다.</string>
+
+    <!-- 모바일오피스 웹뷰/파일 관련 -->
+    <string name="msg_filedowncomplite">파일 다운로드가 완료되었으나 적합한 실행앱을 찾지 못하였습니다. 앱 폴더에서 확인하십시오.</string>
+    <string name="msg_error_docconvert">문서변환 중 오류가 발생했습니다. 다시 시도하시기 바랍니다.</string>
+    <string name="msg_error_docconvert_hasnourl">문서변환 서버 정보를 확인할 수 없습니다. 관리자에게 문의하시기 바랍니다.</string>
+    <string name="msg_confirm_ssl">이 사이트의 인증서는 신뢰할 수 없습니다. 계속 진행하시겠습니까?\n(에러코드: %d)</string>
+    <string name="msg_back_finish">&#8216;뒤로&#8217; 버튼을 한 번 더 누르면 종료됩니다.</string>
+    <string name="msg_detectmocklocation">조작된 위치 정보가 감지되었습니다. 모의 위치 앱 기능을 비활성화하고 다시 시도하십시오.</string>
+
+    <!-- 정책관련 -->
+    <string name="msg_autoclose_noti">%1$d초 후에 %2$s이 종료됩니다.</string>
+    <string name="msg_rooting_fail">보안 정책 상 루팅 폰은 이용이 불가능합니다.\n루팅 해제 후 이용해 주십시오.</string>
+
+    <!-- 배터리 최적화 해제 -->
+    <string name="msg_whitelist_title">배터리 사용량 최적화 해제</string>
+    <string name="msg_whitelist_guide">앱의 기능을 정상적으로 사용하기 위해서는 해당 앱을 "배터리 사용량 최적화" 목록에서 제외해야 합니다.\n\n제외하지 않는 경우 Push 메시지 수신 오류가 발생할 수 있습니다.\n\n계속하시겠습니까?</string>
+    <string name="msg_whitelist_option_off">배터리 사용량 최적화 옵션 해제 방법</string>
+    <string name="msg_whitelist_guide_deny">배터리 사용량 최적화 옵션을 직접 해제하기 위한 방법 안내입니다.\n\n[설정]-[애플리케이션]-[CR WORKS]-[배터리]-[배터리 사용량 최적화]-[전체 보기]-[그룹웨어(옵션 해제)]</string>
+
+    <!-- MDM&기기관리자 -->
+    <string name="device_admin_title">[CR WORKS] 기기관리자 권한</string>
+    <string name="device_admin_desc">기기관리자 권한은 회사 정보유출을 방지하는 용도로만 사용하며, 다른 이유로 사용되지 않습니다.</string>
+    <string name="device_admin_cantuse">기기관리자의 권한이 없는 경우 앱 사용이 불가능합니다.</string>
+    <string name="device_admin_reset_noti">기기관리자 해제를 위해 초기화를 진행합니다.</string>
+    <string name="device_admin_reset_title">기기정책 초기화</string>
+    <string name="device_admin_reset_btn">초기화</string>
+    <string name="device_admin_off_title">기기관리자 해제</string>
+    <string name="device_admin_off_btn">바로가기</string>
+    <string name="mdm_title">기기관리자 권한 설정</string>
+    <string name="mdm_reset_title">기기관리자 권한 해제</string>
+    <string name="mdm_nopermission_desc">위치 권한이 거부되어 앱을 실행할 수 없습니다. [설정]-[애플리케이션]-[CR WORKS]에서 위치 권한을 허용해주세요.</string>
+    <string name="mdm_needpermission_desc">[CR WORKS]를 이용하시려면 다음 항목의 설정이 필요합니다.</string>
+    <string name="mdm_deviceadmin_enable_title">기기관리자 활성화</string>
+    <string name="mdm_deviceadmin_enable_desc">보안을 강화하고 기기를 안전하게 보호하기 위해 기기관리자 권한이 필요합니다.</string>
+    <string name="mdm_deviceadmin_enable_btn">설정</string>
+    <string name="mdm_samsung_licenseenable_title">삼성 라이선스 활성화</string>
+    <string name="mdm_samsung_licenseenable_desc">Samsung에서 제공하는 Knox 기능을 사용하여 보안을 강화하고 기기를 안전하게 보호하기 위해 필요합니다.</string>
+    <string name="mdm_samsung_licenseenable_btn">설정</string>
+
+    <!-- 위젯 추가 -->
+    <string name="appwidget_label">White Theme</string>
+    <string name="appwidget_label_black">Black Theme</string>
+    <string name="appwidget_login_notice">클릭하여 CR WORKS 로그인 후 사용가능\n(로그인 후 새로고침)\n</string>
+    <string name="appwidget_refresh_error">조회 중 오류가 발생했습니다.\n네트워크 상태와 백그라운드 데이터 사용 허용여부를 확인해보시기 바랍니다.</string>
+    <string name="appwidget_title_mail">메일</string>
+    <string name="appwidget_title_approval">미결함</string>
+    <string name="appwidget_title_schedule">일정</string>
+    <string name="appwidget_title_notice">알림</string>
+    <string name="appwidget_title_portal">포탈</string>
+    <string name="appwidget_title_org">조직도</string>
+    <string name="appwidget_title_appconfig">설정</string>
+    <string name="appwidget_title_sfeed">S-Feed</string>
+    <string name="appwidget_msg_login">CR WORKS 로그인이 필요합니다.</string>
+
+    <!-- 캐시 데이터 자동 초기화 -->
+    <string name="msg_cacheinitialize_auto">서버 변경사항으로 캐시 데이터를 초기화 합니다.</string>
+
+    <!-- 외부 앱 호출 -->
+    <string name="callexternalapp_msg_error">해당 앱을 실행할 수 없습니다.</string>
+    <string name="callexternalapp_install">설치</string>
+
+    <!-- 다른 앱 호출 관련 -->
+    <string name="calledotherapp_notmo">도메인 정보가 유효하지 않습니다.</string>
+
+    <!-- 권한 설정 Toast, Snackbar 문구 -->
+    <string name="location_permission_deny_msg">위치 권한이 거부되어 위치를 조회할 수 없습니다.</string>
+    <string name="voice_permission_deny_msg">마이크 권한이 거부되어 음성 인식 기능을 사용할 수 없습니다.</string>
+    <string name="call_permission_deny_msg">권한이 거부되어 수신전화 알림 기능을 사용할 수 없습니다.</string>
+    <string name="camera_permission_deny_msg">카메라 권한이 거부되어 카메라 기능을 사용할 수 없습니다.</string>
+    <string name="external_write_permission_deny_msg">저장공간 접근 권한이 거부되어 앱을 업데이트 할 수 없습니다. 앱을 종료합니다.</string>
+
+    <!--사용안함-->
+    <!--<string name="">푸시알림 설정</string>-->
+    <string name="temp_name" translatable="false">홍길동</string>
+    <string name="temp_jobposition" translatable="false">사원</string>
+    <string name="temp_info" translatable="false">코비젼/브랜드팀/팀원</string>
+    <string name="temp_number" translatable="false">010-1234-5670</string>
+
+    <string name="device_admin_release_allow" translatable="false">기기관리자를 해제할 수 있습니다.(해제 기록을 관리자가 알 수 있습니다.)</string>
+    <string name="device_admin_release_block" translatable="false">기기관리자 해제가 금지되었습니다. 관리자에게 문의하십시오.</string>
+
+
+</resources>

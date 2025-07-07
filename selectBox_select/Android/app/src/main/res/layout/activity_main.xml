@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundBase"
+    android:id="@+id/rootlayout"
+    tools:context=".MainActivity">
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/common_toolbar" />
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:paddingTop="@dimen/tab_bottom_height"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/default_padding_layout"
+        android:paddingRight="@dimen/default_padding_layout"
+        android:visibility="invisible"><!-- android:gravity="center" -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <Spinner
+                android:id="@+id/reg_push_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/default_font_size" />
+
+            <EditText
+                android:id="@+id/reg_push_url"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/regurl_hint"
+                android:text=""
+                android:inputType="textUri"
+                android:padding="@dimen/default_padding"
+                android:textSize="@dimen/default_font_size" />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/reg_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/regurl_btn"
+            android:textColor="@color/colorBase"
+            android:backgroundTint="@color/colorPrimary_forButton"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
+
