@@ -61,10 +61,10 @@ Here are some ideas to get you started:
 | 구분 | 기술 |
 |------|------|
 | 백엔드 | JAVA, Spring boot, Swift, JPA  |
-| DB | MySql, MSSQL, Oracle, postgresql,  |
+| DB | MySql, MSSQL, Oracle, postgresql  |
 | 프론트 | javascript, bootstrap5, HTML5 |
-| 인프라 | Window Tomcat9, Linux, Kubernetes(K8s) |
-| 배포 | SVN |
+| 인프라 | Window Tomcat9, Linux |
+| 배포 | SVN, Kubernetes(K8s) |
 
 ---
 ## 🗂️ Projects
@@ -76,6 +76,7 @@ Here are some ideas to get you started:
 | `Screen_LISS_test` | 캡쳐방지 솔루션 연동 |
 | `app_version_check` | 특정 버전 이하는 앱 실행 불가 |
 | `fido_test_simple` | Android Keystore 기반의 생체인증 연동 데이트 암호화 솔루션 |
+| `selectBox` | select Box를 선택해서 계열사별로 선택 |
 
 ---
 ## 🗂️ 써드파티 연동 (프로젝트로 코드 빼기 어려운 것들 정리)  
